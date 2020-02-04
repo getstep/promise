@@ -1,8 +1,5 @@
 components
 build
 node_modules
-/lib
-/domains
-/setimmediate
 coverage
 package-lock.json
