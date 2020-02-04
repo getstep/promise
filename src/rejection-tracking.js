@@ -45,13 +45,8 @@ function enable(options) {
         error: err,
         timeout: setTimeout(
           onUnhandled.bind(null, promise._rejectionId),
-          // For reference errors and type errors, this almost always
-          // means the programmer made a mistake, so log them after just
-          // 100ms
-          // otherwise, wait 2 seconds to see if they get handled
-          matchWhitelist(err, DEFAULT_WHITELIST)
-            ? 100
-            : 2000
+          // Hard-coding the unhandled rejection delay to 100ms
+          100
         ),
         logged: false
       };
